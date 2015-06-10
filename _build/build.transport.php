@@ -45,7 +45,7 @@ $sources = array(
 unset($root);
 
 
-$modx->loadClass('transport.modPackageBuilder', '', false, true);
+$modx->loadClass('transport.xPDOTransport', XPDO_CORE_PATH, true, true);
 
 
 /** @var xPDOTransport $package */
