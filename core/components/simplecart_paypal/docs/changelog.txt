@@ -1,25 +1,30 @@
-SimpleCart PayPal v1.0.4-pl (May 9, 2015)
-====================================
-- Removed support for adding products to PayPal's summary.
-  Causing rounding issues which makes the payment fail often.
+++ PayPal Gateway for SimpleCart v1.1.0-pl
+++ Released on June 10, 2015
+++++++++++++++++++++++++++++++++++++++++++
+- PayPal Gateway is now maintained and distributed by modmore.com
 
+++ PayPal Gateway for SimpleCart v1.0.4-pl
+++ Released on May 9, 2015
+++++++++++++++++++++++++++++++++++++++++++
+- Removed support for adding products to PayPal's summary. Causing rounding issues which makes the payment fail often.
 
-SimpleCart PayPal v1.0.3-pl (April 26, 2015)
-====================================
+++ PayPal Gateway for SimpleCart v1.0.3-pl
+++ Released on April 26, 2015)
+++++++++++++++++++++++++++++++++++++++++++
 - Fixed: installer to keep method properties and to not clear values
 
-
-SimpleCart PayPal v1.0.2-pl (April 21, 2015)
-====================================
+++ PayPal Gateway for SimpleCart v1.0.2-pl
+++ Released on April 21, 2015
+++++++++++++++++++++++++++++++++++++++++++
 - Fixed: installer to keep method properties and to not clear values
 
-
-SimpleCart PayPal v1.0.1-pl (April 16, 2015)
-====================================
+++ PayPal Gateway for SimpleCart v1.0.1-pl
+++ Released on April 16, 2015
+++++++++++++++++++++++++++++++++++++++++++
 - Fixed: working with right prices to avoid payment issues
 - Fixed: setup to handle entered options
 
-
-SimpleCart PayPal v1.0.0-pl (April 6, 2015)
-====================================
+++ PayPal Gateway for SimpleCart v1.0.0-pl
+++ Released on April 6, 2015
+++++++++++++++++++++++++++++++++++++++++++
 - Initial project (latest copy from SimpleCart's core)

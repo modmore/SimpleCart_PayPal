@@ -1,4 +1,4 @@
-SimpleCart PayPal Gateway Add-On
+PayPal Gateway for SimpleCart
 --------------------
  
 An add-on for the core SimpleCart package. This will install the PayPal gateway integration.
