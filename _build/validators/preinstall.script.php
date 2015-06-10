@@ -9,7 +9,7 @@ switch($options[xPDOTransport::PACKAGE_ACTION]) {
     case xPDOTransport::ACTION_INSTALL:
     case xPDOTransport::ACTION_UPGRADE:
 
-        $modx->log(modX::LOG_LEVEL_INFO, 'Searching SimpleCart\'s core package...');
+        $modx->log(modX::LOG_LEVEL_INFO, 'Searching for SimpleCart...');
 
         /** @var modTransportPackage $simplecart */
         $simplecart = $modx->getObject('transport.modTransportPackage', array('package_name' => 'SimpleCart', 'installed:IS NOT' => null));
