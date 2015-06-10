@@ -88,11 +88,11 @@ $attributes = array(
 );
 $attributes['validate'][] = array ( /* validators are running before file resolvers below */
     'type' => 'php',
-    'source' => $sources['_resolvers'] . 'disable-logging.resolver.php',
+    'source' => $sources['resolvers'] . 'disable-logging.resolver.php',
 );
 $attributes['resolve'][] = array ( /* and resolvers are running after file resolvers below */
     'type' => 'php',
-    'source' => $sources['_resolvers'] . 'enable-logging.resolver.php',
+    'source' => $sources['resolvers'] . 'enable-logging.resolver.php',
 );
 
 $files = array();
