@@ -13,7 +13,7 @@ switch($options[xPDOTransport::PACKAGE_ACTION]) {
     case xPDOTransport::ACTION_INSTALL:
     case xPDOTransport::ACTION_UPGRADE:
 
-        $modx->log(modX::LOG_LEVEL_INFO, 'Creating payment gateway\'s needed records...');
+        $modx->log(modX::LOG_LEVEL_INFO, 'Creating payment gateway records...');
 
         // get count for next sort
         $count = $modx->getCount('simpleCartMethod', array('type' => 'payment'));
