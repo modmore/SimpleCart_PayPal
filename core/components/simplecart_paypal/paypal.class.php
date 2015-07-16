@@ -90,12 +90,17 @@ class SimpleCartPaypalPaymentGateway extends SimpleCartGateway {
                     return true;
                 }
                 else {
-
                     $this->order->addLog('PayPal Payment Status', $response['l_longmessage0']);
                     $this->order->setStatus('payment_failed');
                     $this->order->save();
                 }
             }
+            else {
+                $this->order->addLog('PayPal Return Error', 'Expected token "' . $token . '", got "' . htmlentities($this->getProperty('token'), ENT_QUOTES, 'UTF-8'));
+            }
+        }
+        else {
+            $this->order->addLog('PayPal Return Error', 'No token specified in return from PayPal.');
         }
 
         return false;

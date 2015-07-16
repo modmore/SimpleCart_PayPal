@@ -1,3 +1,8 @@
+++ PayPal Gateway for SimpleCart v1.1.1-pl
+++ Released on July 16, 2015
+++++++++++++++++++++++++++++++++++++++++++
+- Add entries to the Log when a payment cannot be verified if it is token related
+
 ++ PayPal Gateway for SimpleCart v1.1.0-pl
 ++ Released on June 10, 2015
 ++++++++++++++++++++++++++++++++++++++++++
