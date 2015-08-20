@@ -22,10 +22,11 @@ class SimpleCartPaypalPaymentGateway extends SimpleCartGateway {
             $content = $this->modx->lexicon('simplecart.methods.yourorderat');
             $chunk = $this->modx->newObject('modChunk');
             $chunk->setCacheable(false);
-            $lexicon = $chunk->process($content);
+            $chunk->setContent($content);
+            $description = $chunk->process();
 
             // add order as item to appear in PayPal's summary
-            $this->paypal->add_item($lexicon, '', 1, 0, $this->order->get('total'));
+            $this->paypal->add_item($description, '', 1, 0, $this->order->get('total'));
 
             // Perform the payment
             $expressCheckout = $this->paypal->set_express_checkout();

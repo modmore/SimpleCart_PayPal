@@ -2,7 +2,7 @@
 
 $_lang['simplecart.methods.payment.paypal'] = "PayPal";
 $_lang['simplecart.methods.payment.paypal.desc'] = "Pay your order easy with the online international payment method PayPal.";
-$_lang['simplecart.methods.payment.paypal.orderdesc'] = "You've payed your order with PayPal. We successfully have received the payment and your order will be shipped.";
+$_lang['simplecart.methods.payment.paypal.orderdesc'] = "You've paid your order with PayPal. We successfully have received the payment and your order will be shipped.";
 
 // properties
 $_lang['simplecart.methods.payment.paypal.property_currency'] = "Currency";
