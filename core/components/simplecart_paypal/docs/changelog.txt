@@ -1,3 +1,6 @@
+++ PayPal Gateway for SimpleCart v1.1.2-pl
+++ Released on August 21, 2015
+++++++++++++++++++++++++++++++++++++++++++
 - Fix missing order description when paying with PayPal
 - Fix typo in payment method description
 
