@@ -15,8 +15,9 @@ class SimpleCartPaypalPaymentGateway extends SimpleCartGateway {
             if(!$this->initPayPal()) { return false; }
             $this->modx->lexicon->load('simplecart:cart', 'simplecart:methods');
 
+            $total = round($this->order->get('total'), 2);
             // set order total amount for PayPal
-            $this->paypal->amount_total = $this->order->get('total');
+            $this->paypal->amount_total = $total;
 
             /** @var modChunk $chunk */
             $content = $this->modx->lexicon('simplecart.methods.yourorderat');
@@ -26,7 +27,7 @@ class SimpleCartPaypalPaymentGateway extends SimpleCartGateway {
             $description = $chunk->process();
 
             // add order as item to appear in PayPal's summary
-            $this->paypal->add_item($description, '', 1, 0, $this->order->get('total'));
+            $this->paypal->add_item($description, '', 1, 0, $total);
 
             // Perform the payment
             $expressCheckout = $this->paypal->set_express_checkout();
@@ -47,6 +48,7 @@ class SimpleCartPaypalPaymentGateway extends SimpleCartGateway {
                 throw new Exception($msg);
             }
 
+            @session_write_close();
             $this->paypal->set_express_checkout_successful_redirect();
             exit();
         }
@@ -58,16 +60,18 @@ class SimpleCartPaypalPaymentGateway extends SimpleCartGateway {
 
             $this->setRedirectUrl($this->getRedirectUrl(), array('error' => 'true'));
         }
-		
+
         return false;
     }
 
     public function verify() {
-
-        if(!$this->initPayPal()) { return false; }
+        if(!$this->initPayPal()) {
+            $this->order->addLog('PayPal Error', 'Could not initiate connection to PayPal');
+            $this->order->save();
+            return false;
+        }
 
         if($this->hasProperty('token')) {
-
             $token = $this->order->getLog('PayPal Token');
             if ($token == $this->getProperty('token')) {
 
@@ -76,7 +80,8 @@ class SimpleCartPaypalPaymentGateway extends SimpleCartGateway {
                 $this->paypal->payer_id = $this->getProperty('PayerID');
 
                 // set total amount
-                $this->paypal->amount_total = $this->order->get('total');
+                $total = round($this->order->get('total'), 2);
+                $this->paypal->amount_total = $total;
 
                 $succeeded = $this->paypal->do_express_checkout_payment();
                 $response = array_change_key_case($this->paypal->Response, CASE_LOWER);
@@ -98,10 +103,12 @@ class SimpleCartPaypalPaymentGateway extends SimpleCartGateway {
             }
             else {
                 $this->order->addLog('PayPal Return Error', 'Expected token "' . $token . '", got "' . htmlentities($this->getProperty('token'), ENT_QUOTES, 'UTF-8'));
+                $this->order->save();
             }
         }
         else {
             $this->order->addLog('PayPal Return Error', 'No token specified in return from PayPal.');
+            $this->order->save();
         }
 
         return false;
@@ -112,11 +119,11 @@ class SimpleCartPaypalPaymentGateway extends SimpleCartGateway {
     private function initPayPal() {
 
         // get properties
-		$api_sandbox = (boolean) $this->getProperty('usesandbox', 0, 'isset');
-		$api_shipping = (boolean) $this->getProperty('shipping', 0, 'isset');
-		$api_username = $this->getProperty('username');
-		$api_password = $this->getProperty('password');
-		$api_signature = $this->getProperty('signature');
+        $api_sandbox = (boolean) $this->getProperty('usesandbox', 0, 'isset');
+        $api_shipping = (boolean) $this->getProperty('shipping', 0, 'isset');
+        $api_username = $this->getProperty('username');
+        $api_password = $this->getProperty('password');
+        $api_signature = $this->getProperty('signature');
 
         // figure out the currency based on the new currencies and fall back on the properties
         $api_currency = $this->simplecart->currency->get('name');
