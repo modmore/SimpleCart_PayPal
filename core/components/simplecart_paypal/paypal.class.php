@@ -15,7 +15,7 @@ class SimpleCartPaypalPaymentGateway extends SimpleCartGateway {
             if(!$this->initPayPal()) { return false; }
             $this->modx->lexicon->load('simplecart:cart', 'simplecart:methods');
 
-            $total = round($this->order->get('total'), 2);
+            $total = number_format($this->order->get('total'), 2, '.', ',');
             // set order total amount for PayPal
             $this->paypal->amount_total = $total;
 
