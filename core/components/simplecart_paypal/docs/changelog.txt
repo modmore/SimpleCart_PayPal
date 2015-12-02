@@ -1,5 +1,9 @@
+++ PayPal Gateway for SimpleCart v1.1.3-pl
+++ Released on December 2, 2015
+++++++++++++++++++++++++++++++++++++++++++
 - Fix rounding issue if the total is not nicely 2 decimals
 - Fix potential issue saving sessions before redirecting the user off-site
+- Fix issue on certain server locales where transactions would fail to create due to number formatting issues
 
 ++ PayPal Gateway for SimpleCart v1.1.2-pl
 ++ Released on August 21, 2015

@@ -1102,7 +1102,7 @@ class phpPayPal {
 			is stored in $nvpstr
 			*/
 		$nvpstr = $this->generateNVPString('SetExpressCheckout');
-		
+
 		/* Construct and add any items found in this instance */
 		if(!empty($this->ItemsArray))
 		{
@@ -1118,8 +1118,8 @@ class phpPayPal {
 				$nvpstr .= "&L_NAME".$key."=".$current_item['name'].
 							"&L_NUMBER".$key."=".$current_item['number'].
 							"&L_QTY".$key."=".$current_item['quantity'].
-							"&L_TAXAMT".$key."=".$current_item['amount_tax'].
-							"&L_AMT".$key."=".$current_item['amount'];
+							"&L_TAXAMT".$key."=". number_format($current_item['amount_tax'], 2, '.', ',').
+							"&L_AMT".$key."=". number_format($current_item['amount'], 2, '.', ',');
 				// Add this item's amount to the total current count
 				$total_items_amount += ($current_item['amount'] * $current_item['quantity']);
 				$total_items_tax_amount += ($current_item['amount_tax'] * $current_item['quantity']);
@@ -1127,12 +1127,12 @@ class phpPayPal {
 			// Set the amount_items for this instance and ITEMAMT added to the request string
 			$this->amount_items = $total_items_amount;
 			// Add this to our NVP string
-			$nvpstr .= "&ITEMAMT=".urlencode($total_items_amount);
+			$nvpstr .= "&ITEMAMT=".number_format($total_items_amount, 2, '.', ',');
 			// If our entire tax amount is not set, we will automatically set it based on the items tax amount
 			if($this->amount_tax == 0 OR empty($this->amount_tax))
-				$nvpstr .= "&TAXAMT=".urlencode($total_items_tax_amount);
+				$nvpstr .= "&TAXAMT=".number_format($total_items_tax_amount, 2, '.', ',');
 		}
-		
+
 		// decode the variables incase we still require access to them in our program
 		$this->urldecodeVariables();
 		
@@ -1537,8 +1537,13 @@ class phpPayPal {
 		// TODO: return error if required field is empty?
 		foreach($this->RequestFieldsArray[$type] as $key => $value)
 		{
-			if($value['required'] == 'yes')
-				$temp_nvp_str .= '&'.$value['name'].'='.$this->$key;
+			if($value['required'] == 'yes') {
+				$v = $this->$key;
+				if ($key === 'amount_total') {
+					$v = number_format($v, 2, '.', ',');
+				}
+				$temp_nvp_str .= '&' . $value['name'] . '=' . $v;
+			}
 			elseif(!empty($this->$key))
 				$temp_nvp_str .= '&'.$value['name'].'='.$this->$key;
 		}
