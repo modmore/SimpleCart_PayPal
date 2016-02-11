@@ -20,5 +20,5 @@ $_lang['simplecart.methods.payment.paypal.property_signature.desc'] = "Vul de on
 $_lang['simplecart.methods.payment.paypal.property_username'] = "API Gebruikersnaam";
 $_lang['simplecart.methods.payment.paypal.property_username.desc'] = "Vul de gebruikersnaam in dat behoort bij uw API gegevens, om toegang tot uw account te verschaffen.";
 
-$_lang['simplecart.methods.payment.paypal.property_usesandbox'] = "Sandbox Mode";
+$_lang['simplecart.methods.payment.paypal.property_usesandbox'] = "Sandbox Modus";
 $_lang['simplecart.methods.payment.paypal.property_usesandbox.desc'] = "Al dan niet om PayPal in Sandbox (test) mode te draaien. Let op: u heeft hier aparte Sandbox API gegevens voor nodig.";
