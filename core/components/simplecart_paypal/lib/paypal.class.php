@@ -1135,7 +1135,7 @@ class phpPayPal {
 
 		// decode the variables incase we still require access to them in our program
 		$this->urldecodeVariables();
-		
+
 		/* Make the call to PayPal to set the Express Checkout token
 			If the API call succeded, then redirect the buyer to PayPal
 			to begin to authorize payment.  If an error occured, show the
