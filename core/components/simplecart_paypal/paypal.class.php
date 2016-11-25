@@ -120,7 +120,7 @@ class SimpleCartPaypalPaymentGateway extends SimpleCartGateway {
 
         // get properties
         $api_sandbox = (boolean) $this->getProperty('usesandbox', 0, 'isset');
-        $api_shipping = (boolean) $this->getProperty('shipping', 0, 'isset');
+        $api_noshipping = (boolean) $this->getProperty('noshipping', 0, 'isset');
         $api_username = $this->getProperty('username');
         $api_password = $this->getProperty('password');
         $api_signature = $this->getProperty('signature');
@@ -158,7 +158,7 @@ class SimpleCartPaypalPaymentGateway extends SimpleCartGateway {
 		// (required)
 		$this->paypal->ip_address = $_SERVER['REMOTE_ADDR'];
 		$this->paypal->currency_code = $api_currency;
-		$this->paypal->no_shipping = !$api_shipping; // it's logic!
+		$this->paypal->no_shipping = $api_noshipping;
 		$this->paypal->user_action = 'commit';
 
         return true;
