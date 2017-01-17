@@ -1,8 +1,8 @@
 <?php
 
 $_lang['simplecart.methods.payment.paypal'] = "PayPal";
-$_lang['simplecart.methods.payment.paypal.desc'] = "Для онлайн оплаты заказа воспользуйтесь международной платежной системой PayPal.";
-$_lang['simplecart.methods.payment.paypal.orderdesc'] = "Вы оплатить заказ через PayPal. Платеж получен, Ваш заказ готовится к отправке.";
+$_lang['simplecart.methods.payment.paypal.desc'] = "Pay your order easy with the online international payment method PayPal.";
+$_lang['simplecart.methods.payment.paypal.orderdesc'] = "You've paid your order with PayPal. We successfully have received the payment and your order will be shipped.";
 
 // properties
 $_lang['simplecart.methods.payment.paypal.property_currency'] = "Currency";

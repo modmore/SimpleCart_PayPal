@@ -5,20 +5,20 @@ $_lang['simplecart.methods.payment.paypal.desc'] = "Zahlen Sie Ihren Auftrag ein
 $_lang['simplecart.methods.payment.paypal.orderdesc'] = "Sie haben Ihre Bestellung mit PayPal bezahlt. Wir haben Ihre Zahlung erfolgreich erhalten und werden Ihre Bestellung ausliefern.";
 
 // properties
-$_lang['simplecart.methods.payment.paypal.property_currency'] = "Currency";
-$_lang['simplecart.methods.payment.paypal.property_currency.desc'] = "The currency used to pay inside PayPal. Note: always should be USD for Sandbox Mode.";
+$_lang['simplecart.methods.payment.paypal.property_currency'] = "Währung";
+$_lang['simplecart.methods.payment.paypal.property_currency.desc'] = "Die Währung. die für Zahlungen im PayPal Konto verwendet wird. Anmerkung: Für Sandbox Modus immer USD verwenden.";
 
-$_lang['simplecart.methods.payment.paypal.property_noshipping'] = "Disable PayPal Shipping";
-$_lang['simplecart.methods.payment.paypal.property_noshipping.desc'] = "Enter 1 to disable (0 to enable) shipping in PayPal. Normally this is captured by you.";
+$_lang['simplecart.methods.payment.paypal.property_noshipping'] = "Deaktivieren von PayPal Versand";
+$_lang['simplecart.methods.payment.paypal.property_noshipping.desc'] = "Geben Sie 1 zum deaktivieren (0 zum aktivieren) des PayPal Versandes ein. Dies wird normalerweise von Ihnen festgelegt.";
 
 $_lang['simplecart.methods.payment.paypal.property_password'] = "API Password";
-$_lang['simplecart.methods.payment.paypal.property_password.desc'] = "Enter the password from your API credentials, to gain access to your account.";
+$_lang['simplecart.methods.payment.paypal.property_password.desc'] = "Geben Sie das Kennwort aus Ihrem API-Anmeldeinformationen ein, um auf Ihr Konto zugreifen.";
 
-$_lang['simplecart.methods.payment.paypal.property_signature'] = "API Signature";
-$_lang['simplecart.methods.payment.paypal.property_signature.desc'] = "Enter the signature from your API credentials, to gain access to your account.";
+$_lang['simplecart.methods.payment.paypal.property_signature'] = "API Signatur";
+$_lang['simplecart.methods.payment.paypal.property_signature.desc'] = "Geben Sie die Signatur aus Ihren API-Anmeldeinformationen ein, um auf Ihr Konto zugreifen.";
 
-$_lang['simplecart.methods.payment.paypal.property_username'] = "API Username";
-$_lang['simplecart.methods.payment.paypal.property_username.desc'] = "Enter the username from your API credentials, to gain access to your account.";
+$_lang['simplecart.methods.payment.paypal.property_username'] = "API Benutzername";
+$_lang['simplecart.methods.payment.paypal.property_username.desc'] = "Geben Sie den Benutzernamen aus Ihren API-Anmeldeinformationen ein, um auf Ihr Konto zugreifen.";
 
-$_lang['simplecart.methods.payment.paypal.property_usesandbox'] = "Sandbox Mode";
-$_lang['simplecart.methods.payment.paypal.property_usesandbox.desc'] = "Whether or not to run PayPal in Sandbox (test) mode. Note: you need Sandbox API credentials too.";
+$_lang['simplecart.methods.payment.paypal.property_usesandbox'] = "Sandbox Modus";
+$_lang['simplecart.methods.payment.paypal.property_usesandbox.desc'] = "Legt fest ob PayPal im Sandbox Modus (Test) ausgeführt werden soll. Hinweis: Sie benötigen auch die Sandbox API-Anmeldeinformationen.";
