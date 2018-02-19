@@ -5,7 +5,7 @@ class simplecart_paypal
     /** Version indexes **/
 	public $version_major = '1';
 	public $version_minor = '1';
-	public $version_patch = '5';
+	public $version_patch = '6';
 	public $version_release = 'pl';
 	public $version_index = '';
 
