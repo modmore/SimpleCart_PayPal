@@ -80,7 +80,7 @@ class SimpleCartPaypalPaymentGateway extends SimpleCartGateway {
                 $this->paypal->payer_id = $this->getProperty('PayerID');
 
                 // set total amount
-                $total = number_format($this->order->get('total'), 2, '.', ',');
+                $total = number_format($this->order->get('total'), 2, '.', '');
                 $this->paypal->amount_total = $total;
 
                 $succeeded = $this->paypal->do_express_checkout_payment();

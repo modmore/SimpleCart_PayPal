@@ -1,3 +1,5 @@
+- Fix issue with transactions over 1000 truncating the numbers again [S16139]
+
 ++ PayPal Gateway for SimpleCart v1.1.5-pl
 ++ Released on March 7, 2016
 ++++++++++++++++++++++++++++++++++++++++++
