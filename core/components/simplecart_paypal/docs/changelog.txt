@@ -1,10 +1,10 @@
-PayPal Gateway for SimpleCart v1.1.6-pl
+PayPal Gateway for SimpleCart v1.1.7-pl
 ---------------------------------------
 Released on November 13th, 2019
 
 - Update description to include the order number (update to SimpleCart 2.7)
 
-PayPal Gateway for SimpleCart v1.1.5-pl
+PayPal Gateway for SimpleCart v1.1.6-pl
 ---------------------------------------
 Released on February 19th, 2018
 
