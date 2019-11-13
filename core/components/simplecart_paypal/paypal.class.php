@@ -19,12 +19,12 @@ class SimpleCartPaypalPaymentGateway extends SimpleCartGateway {
             // set order total amount for PayPal
             $this->paypal->amount_total = $total;
 
-            /** @var modChunk $chunk */
-            $content = $this->modx->lexicon('simplecart.methods.yourorderat');
-            $chunk = $this->modx->newObject('modChunk');
-            $chunk->setCacheable(false);
-            $chunk->setContent($content);
-            $description = $chunk->process();
+            $description = $this->modx->lexicon('simplecart.methods.yourorderat', array(
+                'site_name' => $this->modx->getOption('site_name'),
+                '+site_name' => $this->modx->getOption('site_name'),
+                'site_url' => $this->modx->getOption('site_url'),
+                'ordernr' => $this->order->get('ordernr'),
+            ));
 
             // add order as item to appear in PayPal's summary
             $this->paypal->add_item($description, '', 1, 0, $total);
